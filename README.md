@@ -1,13 +1,20 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Trybers And Dragons :dragon_face:
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+Para este projeto tinha como objetivo a utilização de uma estrutura de jogos de interpretação de papéis, mais conhecido como jogos 'RPG'(Role Playing Game). Tendo como pilar aplicar os princípios da arquitetura 'SOLID' e os princípios de 'POO'.
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+
+## Tecnologias
+As tecnologias utilizadas para o desenvolvimento da aplicação foram:
+- TypeScript
+
+## Executando o projeto
+Para executar o projeto, é necessário:
+
+1. Clonar este repositório
+  ```
+  git clone git@github.com:albertassihatus/TrybersAndDragonsRPG.git
+  ```
+2. Instalar as dependências na branch `main`
+  ```
+  npm install
+  ```
