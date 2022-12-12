@@ -1,6 +1,6 @@
 import Archetype, { Mage } from './Archetypes';
 import Energy from './Energy';
-import Fighter, { SimpleFighter } from './Fighter';
+import Fighter from './Fighter';
 import Race, { Elf } from './Races';
 import getRandomInt from './utils';
 
@@ -61,16 +61,6 @@ class Character implements Fighter {
     };
   }
 
-  private _lossHP(damage: number) {
-    this._lifePoints -= damage;
-  }
-
-  //   receiveDamage 😵 este método recebe por parâmetro um valor (attackPoints) e as regras são:
-  // Este valor deve ser decrescido de sua defesa (defense), assim causando um dano (damage);
-  // Se o dano calculado for maior que 0, você perde esse valor em pontos de vida (lifePoints). 
-  //   Se o dano calculado (damage) for igual ou menor a zero, você deve perder apenas 1 ponto de vida (lifePoints);
-  // Ao receber o ataque e perder pontos de vida (lifePoints), e se sua vida chegar a 0 ou menos, você deve fixá-la com o valor -1;
-  // Ao final sempre retorne o valor atualizado de seus pontos de vida.
   receiveDamage(attackPoints: number): number {
     const damage = attackPoints - this._defense;
 
@@ -89,8 +79,12 @@ class Character implements Fighter {
     return this._lifePoints;
   }
 
-  attack(enemy: SimpleFighter): void {
+  attack(enemy: Fighter): void {
     enemy.receiveDamage(this._strength);
+  }
+
+  special(enemy: Fighter): void {
+    enemy.receiveDamage(this._strength * 2);
   }
 
   levelUp(): void {
@@ -104,11 +98,5 @@ class Character implements Fighter {
     this._energy.amount = 10;
     this._lifePoints = this._maxLifePoints;
   }
-
-  special(enemy: Fighter): void {
-    const attSpecial = this._strength * 5;
-    enemy.receiveDamage(attSpecial);
-  }
 }
-
 export default Character;
